@@ -1,0 +1,5 @@
+function z = gMCPForGivenGama_OLD(w,lambda,gama)
+%output z (size of w and w>=0)
+S =  w <= gama*lambda;
+z = (lambda - w/gama).*S;
+end

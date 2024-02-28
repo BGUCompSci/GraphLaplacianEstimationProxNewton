@@ -1,0 +1,7 @@
+function out = mcp_scalar_OLD(w,lambda,gama)
+    gama_lambda = gama*lambda;
+    helf_gama2_lambda = gama_lambda*lambda/2;
+    S = abs(w) <= gama_lambda;
+    out = (lambda*abs(w)-(w.^2)./(2*gama) - helf_gama2_lambda).*S + helf_gama2_lambda;
+    %MCPw = (lambda*w-(w.^2)./(2*gama)).*S + (0.5*(lambda^2)*gama)*(1-S);
+end
